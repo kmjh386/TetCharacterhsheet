@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<body>
+    
+
+<link href="Format.CSS" rel="stylesheet">
+<h1>Tetrarch Character Sheet</h1>
+<div class="container">
+<div class="Col1">
+    <div class="Attributes">
+    <table class="table">
+
+        
+        <tr>
+            <th>Atribute</th>
+            <th>Score</th>
+            <th>Current</th>
+        </tr>
+        <tr>
+            <td>Vigor</td>
+            <td><input type="number" value="1" id="VigorScore"
+            onchange="UpdateModifiers()"    ></td>
+            <td><input type="number" value="1" id="VigorCurrent"></td>
+        </tr>
+        <tr>
+            <td>Agility</td>
+            <td><input type="number" value="1" id="AgilityScore"></td>
+            <td><input type="number" value="1" id="AgilityCurrent"></td>
+        </tr>
+        <tr>
+            <td>Mettle</td>
+            <td><input type="number" value="1" id="MettleScore"></td>
+            <td><input type="number" value="1" id="MettleCurrent"></td>
+        </tr>
+        <tr>
+            <td>Acuity</td>
+            <td><input type="number" value="1" id="AcuityScore"></td> 
+            <td><input type="number" value="1" id="AcuityCurrent"></td>
+        </tr>
+        <tr>
+            <td>Focus</td>
+            <td><input type="number" value="1" id="FocusScore"></td>
+            <td><input type="number" value="1" id="FocusCurrent"></td>
+        </tr>
+        <tr>
+            <td>Ankh</td> <td><input type="number" value="1" id="AnkScore"></td>
+        </tr>
+        <tr>
+            <td>Xp</td>
+            <td><input type="number" placeholder="10" id="Xp"></td>
+        </tr>
+        </table>
+            </div>
+    <div class="DT">
+        <table>
+        <h2>Defensive Threshold</h2>
+            <tr>
+                <td>Current</td>
+                <td><input type="number" placeholder="5" id="CurrentDT"></td>
+            </tr>
+            <tr>
+                <td>Standard</td>
+                <td><input type="number" placeholder="5" id="StandardDT"></td>
+            </tr>
+                <tr><td>Surpised</td>
+                    <td><input type="number" placeholder="5" id="SuprisedDT"></td>
+                </tr>
+        </table>
+        </div>
+    <div class="Health">
+        <h2>Health</h2>
+    <table>
+<tr>
+    <td>Damage</td>
+    <td>Body</td>
+</tr>
+<tr>
+    <td><input type="number" placeholder="0" id="DmgSc"></td> dammage score is Concussive + wound
+    <td><input type="number" placeholder="0" id="BdSc"></td>
+</tr>
+<tr>
+    <td>Concussive</td>
+    <td>Fatigue</td>
+</tr>
+<tr>
+    <td><input type="number" placeholder="0" id="conSc"></td>
+    <td><input type="number" placeholder="2" id="FatSc"></td>
+</tr>
+<tr>
+    <td>Wound</td>
+    <td>Bleedout</td>
+</tr>
+<tr>
+    <td><input type="number" placeholder="0" id="WSc"></td>
+    <td><input type="number" placeholder="+7" id="BlSc"></td>
+</tr>
+        </table>
+            </div>
+            <div class="Movement">
+                <h2>Movemnent</h2>
+                <table>
+                    <tr>
+                        <td>Current</td> <td>Standard</td> <td>Base</Td>
+                    </tr>
+                        <td><input type="number" placeholder="0" id="CurrentMovement"></td>
+                        <td><input type="number" placeholder="0" id="StandardMovement"></td>
+                        <td><input type="number" placeholder="0" id="Basemovement"></td>
+                </table>
+                </div>
+    <div class="weapons">
+        <table>
+<tr></tr>
+            <h2>Equipped Weapons</h2>
+            <tr>
+                <td>Weapon</td><td>Damage</td><td>Depletion</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="weapon_1"></td>
+                <td><input type="text" id="Dmg_1"></td>
+                <td><input type="number" id="Dep_1"></td>
+            </tr>
+            <tr>
+                <td>Range</td><td>FS</td><td>Lbs</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="Rng_1"></td>
+                <td><input type="number" id="Fs_1"></td>
+                <td><input type="number" id="Lbs_1"></td>
+            </tr>
+        </table>
+    </div> 
+</div>
+<Div class="Col2">
+<div> <h2>Character Information</h2>
+<table>
+<tr>
+    <td>Character Name</td> <Td><input type="text" placeholder="Name"></Td>
+</tr>
+<tr>
+    <td>Player Name</td> <Td><input type="text" placeholder="Name"></Td>
+</tr>
+<tr>
+    <td>Species</td> <td><select name="Aspect" id="Aspect">
+        <option value="Human">Human</option>
+        <option value="Menkha">Menkha</option>
+        <option value="Bast">Bast</option>
+        <option value="Anubi">Anubi</option> 
+                </select></td>
+</tr>
+<tr>
+    <td>Aspect</td> <td><select name="Aspect" id="Aspect">
+        <option value="Plasma">Plasma</option>
+        <option value="Entropy">Entropy</option>
+        <option value="Cosmos">Cosmos</option>
+        <option value="Æther">Æther</option> 
+        <option value="Star">Star</option>
+                </select></td>
+</tr>
+<tr>
+    <td>Profession</td> <Td><input type="text" placeholder="Protector"></Td>
+</tr>
+<tr>
+    <td>Rank</td> <Td><input type="number" id="Rank" value="1" min="1" max="24" onchange="UpdateRankBonus"></Td>
+</tr>
+    </table>
+        </div>
+        <div class="Armor">
+            <h2>Armor</h2>
+            <table>
+                <tr>
+                <td>Scout</td> <td>0</td><td><input type="checkbox" id="SctAr"></td>
+                <tr><td>Combat</td> <td>-2</td><td><input type="checkbox" id="ComAr"></td></tr> 
+                <tr><td>Juggernaught</td><td>-4</td><td><input type="checkbox" id="JugAr"></td></tr>    
+                    </tr>
+                <tr>Armor Rating</tr>
+                <TR><input type="number" placeholder="0" id="ArmorAr"></TR>
+                </table>
+            <table>
+                <tr>
+                <td>Small</td><td>0</td><td><input type="checkbox" id="SmAr"></td>
+                <tr><td>Combat</td><td>-1</td><td><input type="checkbox" id="ComSAr"></td></tr> 
+                <tr><td>Line</td><td>-2</td><td><input type="checkbox" id="LnAr"></td></tr>    
+                    </tr>
+                <tr>Armor Rating</tr>
+                <tr><input type="number" placeholder="0" id="ShieldAr">
+                    </tr>
+                </table>
+            </div>
+    <div class="skills">
+            <Table id="skills">
+                <th >Skills</th>
+                <tr>
+                    <td>Name</td><td>Realm</td><td>Talent</td><td>Level</td><td>FS Mod</td>  
+                        </tr>
+                <tr>
+                    <td><input type="text"></td> 
+                    <td><select name="Realm" id="Realms">
+                        <option value="Knowledge">Knowledge</option>
+                        <option value="Mental">Mental</option>
+                        <option value="Physical">Physical</option>
+                        <option value="Subtufuge">Subtufuge</option> 
+                        <option value="Occult">Occult</option>
+                                </select>
+                            </td>
+                <td><select name="Talent" id="Talents">
+                        <option value="vigor">Vigor</option>
+                        <option value="Agility">Agility</option>
+                        <option value="Mettle">Mettle</option>
+                        <option value="Acuity">Acuity</option> 
+                        <option value="Focus">Focus</option>
+                                </select>
+                                    </td> 
+                <td><select name="Level" id="Level">
+                        <option value="Novice">Novice</option>
+                        <option value="Trained">Trained</option>
+                        <option value="Adept">Adept</option>
+                        <option value="Master">Master</option> 
+                        <option value="Heroic">Heroic</option>
+                                </select>
+                                    </td>   
+                    <td><input type="number"></td>                               
+                    </tr>
+                <tr><td colspan="30"><textarea name="Notes" id="NoteSp" cols="20" rows="2" placeholder="notes"></textarea>
+                        </td>
+                    </tr>
+                    
+                    </Table>
+        </div>
+    
+    </Div>
+    
+        </div>   
+                                                        </body>
