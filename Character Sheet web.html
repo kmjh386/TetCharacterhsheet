@@ -12,7 +12,7 @@
 </html>
 <body>
     <link href="Format.CSS" rel="stylesheet">
-    <script src="C:\Users\Keith\Creative Cloud Files\workspace\Engine.Js"></script>
+    
 <h1>Tetrarch Character Sheet</h1>
 <div class="container">
 <div class="Col1">
@@ -29,27 +29,27 @@
             <td>Vigor</td>
             <td><input type="number" value="1" id="vigorScore"
             onchange="UpdateModifiers()"    ></td>
-            <td><input type="number" value="1" id="vigorCurrent"></td>
+            <td><input type="number" value="1" id="vigorScoreCurrent"></td>
         </tr>
         <tr>
             <td>Agility</td>
             <td><input type="number" value="1" id="agilityScore"onchange="UpdateModifiers()></td>
-            <td><input type="number" value="1" id="agilityCurrent"></td>
+            <td><input type="number" value="1" id="agilityScoreCurrent"></td>
         </tr>
         <tr>
             <td>Mettle</td>
             <td><input type="number" value="1" id="mettleScore"onchange="UpdateModifiers()></td>
-            <td><input type="number" value="1" id="mettleCurrent"></td>
+            <td><input type="number" value="1" id="mettleScoreCurrent"></td>
         </tr>
         <tr>
             <td>Acuity</td>
             <td><input type="number" value="1" id="acuityScore" onchange="UpdateModifiers()"></td> 
-            <td><input type="number" value="1" id="acuityCurrent"></td>
+            <td><input type="number" value="1" id="acuityScoreCurrent"></td>
         </tr>
         <tr>
             <td>Focus</td>
             <td><input type="number" value="1" id="focusScore" onchange="UpdateModifiers()"></td>
-            <td><input type="number" value="1" id="focusCurrent"></td>
+            <td><input type="number" value="1" id="focusScoreCurrent"></td>
         </tr>
         <tr>
             <td>Ankh</td> <td><input type="number" value="1" id="AnkScore"></td>
@@ -72,7 +72,7 @@
                 <td><input type="number" placeholder="0" id="StandardDT"></td>
             </tr>
                 <tr><td>Surpised</td>
-                    <td><input type="number" placeholder="0" id="SuprisedDT"></td>
+                    <td><input type="number" placeholder="0" id="SurprisedDT"></td>
                 </tr>
         </table>
         </div>
@@ -111,9 +111,9 @@
                     <tr>
                         <td>Current</td> <td>Standard</td> <td>Base</Td>
                     </tr>
-                        <td><input type="number" placeholder="0" id="CurrentMovement"></td>
-                        <td><input type="number" placeholder="0" id="StandardMovement"></td>
-                        <td><input type="number" placeholder="0" id="Basemovement"></td>
+                        <td><input type="number" placeholder="0" id="currentMovement"></td>
+                        <td><input type="number" placeholder="0" id="standardMovement"></td>
+                        <td><input type="number" placeholder="0" id="baseMovement"></td>
                 </table>
                 </div>
     <div class="weapons">
@@ -169,38 +169,9 @@
     <td>Profession</td> <Td><input type="text" placeholder="Protector"></Td>
 </tr>
 <tr>
-    <td>Rank</td> <Td><input type="number" id="rank" value="1" min="1" max="24" onchange = function(updateRankBonus)></Td>
+    <td>Rank</td> <Td><input type="number" id="rank" value="1" min="1" max="24" onchange = "updateRankBonus" ></Td>
 </tr>
     </table>
-    <script>function updateRankBonus() {
-        var rank = parseInt(document.getElementById("rank").value);
-    
-        if (rank >= 19) {
-        document.getElementById("agilityScore").value += 3,
-        document.getElementById("focusScore").value += 3,
-        document.getElementById("vigorScore").value += 3,
-        document.getElementById("mettleScore").value += 3,
-        document.getElementById("acuityScore").value += 3;
-        } else if (rank >= 13) {
-        document.getElementById("agilityScore").value += 2,
-        document.getElementById("focusScore").value += 2,
-        document.getElementById("vigorScore").value += 2,
-        document.getElementById("mettleScore").value += 2,
-        document.getElementById("acuityScore").value += 2;
-        } else if (rank >= 7) {
-            document.getElementById("agilityScore").value += 1,
-            document.getElementById("focusScore").value += 1,
-            document.getElementById("vigorScore").value += 1,
-            document.getElementById("mettleScore").value += 1,
-            document.getElementById("acuityScore").value += 1;
-        } else {
-            document.getElementById("agilityScore").value += 0,
-            document.getElementById("focusScore").value += 0,
-            document.getElementById("vigorScore").value += 0,
-            document.getElementById("mettleScore").value += 0,
-            document.getElementById("acuityScore").value += 0;
-        }
-    }</script>
         </div>
         <div class="Armor">
             <h2>Armor</h2>
@@ -268,4 +239,5 @@
     </Div>
     
         </div>   
+        <script type="text/javascript" src="Engine.Js"></script>
                                                         </body>

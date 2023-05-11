@@ -14,35 +14,36 @@
     7 - 12 +1
     13 - 18 +2
     19 -24 +3*/
-function updateRankBonus() {
-    var rank = parseInt(document.getElementById("rank").value);
-
-    if (rank >= 19) {
-    document.getElementById("agilityScore").value += 3,
-    document.getElementById("focusScore").value += 3,
-    document.getElementById("vigorScore").value += 3,
-    document.getElementById("mettleScore").value += 3,
-    document.getElementById("acuityScore").value += 3;
-    } else if (rank >= 13) {
-    document.getElementById("agilityScore").value += 2,
-    document.getElementById("focusScore").value += 2,
-    document.getElementById("vigorScore").value += 2,
-    document.getElementById("mettleScore").value += 2,
-    document.getElementById("acuityScore").value += 2;
-    } else if (rank >= 7) {
-        document.getElementById("agilityScore").value += 1,
-        document.getElementById("focusScore").value += 1,
-        document.getElementById("vigorScore").value += 1,
-        document.getElementById("mettleScore").value += 1,
-        document.getElementById("acuityScore").value += 1;
-    } else {
-        document.getElementById("agilityScore").value += 0,
-        document.getElementById("focusScore").value += 0,
-        document.getElementById("vigorScore").value += 0,
-        document.getElementById("mettleScore").value += 0,
-        document.getElementById("acuityScore").value += 0;
+    function updateRankBonus() {
+        var rank = parseInt(document.getElementById("rank").value);
+    
+        if (rank >= 19) {
+            document.getElementById("agilityScore").value += 3,
+            document.getElementById("focusScore").value += 3,
+            document.getElementById("vigorScore").value += 3,
+            document.getElementById("mettleScore").value += 3,
+            document.getElementById("acuityScore").value += 3;
+        } else if (rank >= 13) {
+            document.getElementById("agilityScore").value += 2,
+            document.getElementById("focusScore").value += 2,
+            document.getElementById("vigorScore").value += 2,
+            document.getElementById("mettleScore").value += 2,
+            document.getElementById("acuityScore").value += 2;
+        } else if (rank >= 7) {
+            document.getElementById("agilityScore").value += 1,
+            document.getElementById("focusScore").value += 1,
+            document.getElementById("vigorScore").value += 1,
+            document.getElementById("mettleScore").value += 1,
+            document.getElementById("acuityScore").value += 1;
+        } else {
+            document.getElementById("agilityScore").value += 0,
+            document.getElementById("focusScore").value += 0,
+            document.getElementById("vigorScore").value += 0,
+            document.getElementById("mettleScore").value += 0,
+            document.getElementById("acuityScore").value += 0;
+        }
     }
-}
+    
 
     /*
 Aspect Modifier for Character
@@ -59,26 +60,25 @@ When a player chooses thier aspect the aspects modifiers are automaticaly added 
     Star 
         +1 to talent of choice, 
         ahnk += 1*/
-function updateAspect() {
-    var aspect = parseInt
-    if(aspect = "plasma"){
-        document.getElementById ("bodyScore") += 4,
-        document.getElementById ("fatiugeScore") += 4;
-    }
-    else if (aspect = "Cosmos"){
-        document.getElementById ("focusScore") += 1;
-    }
-    else if (aspect = "entropy"){
-        document.getElementById ("mettleScore") += 1;
-    }
-    else if (aspect = "Æther"){
-        document.getElementById ("acuityScore") += 1;
-    }
-    else (aspect = "Star") {
-        document.getElementById(ahnk) += 1;
+        function updateAspect() {
+            var aspect = document.getElementById("aspect").value;
+        
+            if (aspect === "plasma") {
+                document.getElementById("bodyScore").value = parseInt(document.getElementById("bodyScore").value) + 4;
+                document.getElementById("fatigueScore").value = parseInt(document.getElementById("fatigueScore").value) + 4;
+            } else if (aspect === "Cosmos") {
+                document.getElementById("focusScore").value = parseInt(document.getElementById("focusScore").value) + 1;
+            } else if (aspect === "entropy") {
+                document.getElementById("mettleScore").value = parseInt(document.getElementById("mettleScore").value) + 1;
+            } else if (aspect === "Æther") {
+                document.getElementById("acuityScore").value = parseInt(document.getElementById("acuityScore").value) + 1;
+            } else if (aspect === "Star") {
+                document.getElementById("ahnk").value = parseInt(document.getElementById("ahnk").value) + 1;
+            }
+        }
+        
         //figureout how to let the player choose an aspect to increase by +1//
-    }
-}
+
         /*
 Core stats
 Players core stats are automaticaly updated. and they can add modifiers to the core stats 
@@ -88,32 +88,55 @@ Players core stats are automaticaly updated. and they can add modifiers to the c
     DTSCore = MettleScore + AgilityScore + AcuityScore +MettleScore
     SuprisedDTScore= MettleScore + AcuityScore + SurpisedDTModifier
     FatiugeScore = VigorScore + MettleScore + FatiugeModifier*/
-function bodyScore() {
-    var bodyScore()
-        document.getElementById(bodyScore){
-            agilityScore += acuityScore += mettleScore += vigorScore += focusScore += bodyModifiers;
-        }
+    function calculateBodyScore() {
+        var agilityScore = parseInt(document.getElementById("agilityScore").value);
+        var acuityScore = parseInt(document.getElementById("acuityScore").value);
+        var mettleScore = parseInt(document.getElementById("mettleScore").value);
+        var vigorScore = parseInt(document.getElementById("vigorScore").value);
+        var focusScore = parseInt(document.getElementById("focusScore").value);
+        var bodyModifiers = 3;
     
-}    
-function movementScore(){
-    var movementScore(){
-        currentAgilityScore  += baseMovement += MoveModifier;
-    }
+        var bodyScore = agilityScore + acuityScore + mettleScore + vigorScore + focusScore + bodyModifiers;
+    
+        document.getElementById("bodyScore").value = bodyScore;
+    }  
+function movementScore() {
+    var currentAgilityScore = parseInt(document.getElementById("agilityScore").value);
+    var baseMovement = parseInt(document.getElementById(baseMovement).value);
+    var moveModifier = 2;
+    var movementScore = currentAgilityScore + baseMovement + moveModifier;
+    document.getElementById("movementScore").value = movementScore;
 }
-function intiativeScore(){
-    var intiativeScore(){
-        currentAgilityScore += currentAcuityScore += intiativeModifier;
-    }
+function intiativeScore() {
+    var currentAgilityScore = parseInt(document.getElementById("agilityScore").value);
+    var currentAcuityScore = parseInt(document.getElementById("acuityScore").value);
+    var intiativeModifier = 3;
+    var intiativeScore = currentAgilityScore + currentAcuityScore + intiativeModifier;
+    document.getElementById("intiativeScore").value = intiativeScore;
 }
-function DTScore(){
-    currentMettleScore += currentAgilityScore += currentAcuityScore += DTModifier;
+function DTScore() {
+    var currentMettleScore = parseInt(document.getElementById("mettleScore").value);
+    var currentAgilityScore = parseInt(document.getElementById("agilityScore").value);
+    var currentAcuityScore = parseInt(document.getElementById("acuityScore").value);
+    var DTModifier = 0;
+    var DTScore = currentMettleScore + currentAgilityScore + currentAcuityScore + DTModifier;
+    document.getElementById("DTScore").value = DTScore;
 }
-function suprisedDTScore(){
-    currentMettleScore + currentAcuityScore + surpisedDTModifier;
+function suprisedDTScore() {
+    var currentMettleScore = parseInt(document.getElementById("mettleScore").value);
+    var currentAcuityScore = parseInt(document.getElementById("acuityScore").value);
+    var surprisedDTModifier = 3;
+    var surprisedDTScore = currentMettleScore + currentAcuityScore + surprisedDTModifier;
+    document.getElementById("surprisedDTScore").value = surprisedDTScore;
 }
-function fatiugeScore() {
-    currentVigorScore + currentMettleScore + fatiugeModifier;
+function fatigueScore() {
+    var currentVigorScore = parseInt(document.getElementById("vigorScore").value);
+    var currentMettleScore = parseInt(document.getElementById("mettleScore").value);
+    var fatigueModifier = -2; // assuming the modifier is negative
+    var fatigueScore = currentVigorScore + currentMettleScore + fatigueModifier;
+    document.getElementById("fatigueScore").value = fatigueScore;
 }
+
 
 /*Species Modifiers
 When a player selects a species the attributes of that species are automaticaly added to thier character sheet.
@@ -178,22 +201,26 @@ items
     Sum of all Lbs
     */
 
-function updateArmor() {
-    if(armor = "juggernaught") {
-        currentAgilityScore -= 4;
+    function updateArmor() {
+        if (armor === "juggernaut") {
+            currentAgilityScore -= 4;
+        }
+        else if (armor === "combat") {
+            currentAgilityScore -= 2;
+        }
+        else if (armor === "scout") {
+            // do nothing since scout armor doesn't affect agility
+        }
     }
-    else if ( armor = "combat") {
-        currentAgilityScore -= 2;
-    }
-    else (armor = "scout") -= 0;
-}
 
-function updateShield() {
-    if(armor = "lineShield") {
-        currentAgilityScore -= 2;
+    function updateShield() {
+        if(armor === "lineShield") {
+            currentAgilityScore -= 2;
+        }
+        else if (armor === "combatShield") {
+            currentAgilityScore -= 1;
+        }
+        else {
+            armor === "scoutShield";
+        }
     }
-    else if ( armor = "combatShield") {
-        currentAgilityScore -= 1;
-    }
-    else (armor = "scoutShield") -= 0;
-}
