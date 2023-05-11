@@ -11,9 +11,8 @@
 </body>
 </html>
 <body>
-    
-
-<link href="Format.CSS" rel="stylesheet">
+    <link href="Format.CSS" rel="stylesheet">
+    <script src="C:\Users\Keith\Creative Cloud Files\workspace\Engine.Js"></script>
 <h1>Tetrarch Character Sheet</h1>
 <div class="container">
 <div class="Col1">
@@ -28,29 +27,29 @@
         </tr>
         <tr>
             <td>Vigor</td>
-            <td><input type="number" value="1" id="VigorScore"
+            <td><input type="number" value="1" id="vigorScore"
             onchange="UpdateModifiers()"    ></td>
-            <td><input type="number" value="1" id="VigorCurrent"></td>
+            <td><input type="number" value="1" id="vigorCurrent"></td>
         </tr>
         <tr>
             <td>Agility</td>
-            <td><input type="number" value="1" id="AgilityScore"></td>
-            <td><input type="number" value="1" id="AgilityCurrent"></td>
+            <td><input type="number" value="1" id="agilityScore"onchange="UpdateModifiers()></td>
+            <td><input type="number" value="1" id="agilityCurrent"></td>
         </tr>
         <tr>
             <td>Mettle</td>
-            <td><input type="number" value="1" id="MettleScore"></td>
-            <td><input type="number" value="1" id="MettleCurrent"></td>
+            <td><input type="number" value="1" id="mettleScore"onchange="UpdateModifiers()></td>
+            <td><input type="number" value="1" id="mettleCurrent"></td>
         </tr>
         <tr>
             <td>Acuity</td>
-            <td><input type="number" value="1" id="AcuityScore"></td> 
-            <td><input type="number" value="1" id="AcuityCurrent"></td>
+            <td><input type="number" value="1" id="acuityScore" onchange="UpdateModifiers()"></td> 
+            <td><input type="number" value="1" id="acuityCurrent"></td>
         </tr>
         <tr>
             <td>Focus</td>
-            <td><input type="number" value="1" id="FocusScore"></td>
-            <td><input type="number" value="1" id="FocusCurrent"></td>
+            <td><input type="number" value="1" id="focusScore" onchange="UpdateModifiers()"></td>
+            <td><input type="number" value="1" id="focusCurrent"></td>
         </tr>
         <tr>
             <td>Ankh</td> <td><input type="number" value="1" id="AnkScore"></td>
@@ -66,14 +65,14 @@
         <h2>Defensive Threshold</h2>
             <tr>
                 <td>Current</td>
-                <td><input type="number" placeholder="5" id="CurrentDT"></td>
+                <td><input type="number" placeholder="0" id="CurrentDT"></td>
             </tr>
             <tr>
                 <td>Standard</td>
-                <td><input type="number" placeholder="5" id="StandardDT"></td>
+                <td><input type="number" placeholder="0" id="StandardDT"></td>
             </tr>
                 <tr><td>Surpised</td>
-                    <td><input type="number" placeholder="5" id="SuprisedDT"></td>
+                    <td><input type="number" placeholder="0" id="SuprisedDT"></td>
                 </tr>
         </table>
         </div>
@@ -150,29 +149,58 @@
     <td>Player Name</td> <Td><input type="text" placeholder="Name"></Td>
 </tr>
 <tr>
-    <td>Species</td> <td><select name="Aspect" id="Aspect">
-        <option value="Human">Human</option>
+    <td>Species</td> <td><select name="Aspect" id="Aspect" onchange="UpdateModifiers()>
+        <option value "Human">Human</option>
         <option value="Menkha">Menkha</option>
         <option value="Bast">Bast</option>
         <option value="Anubi">Anubi</option> 
                 </select></td>
 </tr>
 <tr>
-    <td>Aspect</td> <td><select name="Aspect" id="Aspect">
-        <option value="Plasma">Plasma</option>
-        <option value="Entropy">Entropy</option>
-        <option value="Cosmos">Cosmos</option>
-        <option value="Æther">Æther</option> 
-        <option value="Star">Star</option>
+    <td>Aspect</td> <td><select name="Aspect" id="Aspect" onchange="UpdateModifiers()>
+        <option value = "plasma"> Plasma</option>
+        <option value = "entropy">Entropy</option>
+        <option value = "cosmos">Cosmos</option>
+        <option value = "Æther">Æther</option> 
+        <option value = "star">Star</option>
                 </select></td>
 </tr>
 <tr>
     <td>Profession</td> <Td><input type="text" placeholder="Protector"></Td>
 </tr>
 <tr>
-    <td>Rank</td> <Td><input type="number" id="Rank" value="1" min="1" max="24" onchange="UpdateRankBonus"></Td>
+    <td>Rank</td> <Td><input type="number" id="rank" value="1" min="1" max="24" onchange = function(updateRankBonus)></Td>
 </tr>
     </table>
+    <script>function updateRankBonus() {
+        var rank = parseInt(document.getElementById("rank").value);
+    
+        if (rank >= 19) {
+        document.getElementById("agilityScore").value += 3,
+        document.getElementById("focusScore").value += 3,
+        document.getElementById("vigorScore").value += 3,
+        document.getElementById("mettleScore").value += 3,
+        document.getElementById("acuityScore").value += 3;
+        } else if (rank >= 13) {
+        document.getElementById("agilityScore").value += 2,
+        document.getElementById("focusScore").value += 2,
+        document.getElementById("vigorScore").value += 2,
+        document.getElementById("mettleScore").value += 2,
+        document.getElementById("acuityScore").value += 2;
+        } else if (rank >= 7) {
+            document.getElementById("agilityScore").value += 1,
+            document.getElementById("focusScore").value += 1,
+            document.getElementById("vigorScore").value += 1,
+            document.getElementById("mettleScore").value += 1,
+            document.getElementById("acuityScore").value += 1;
+        } else {
+            document.getElementById("agilityScore").value += 0,
+            document.getElementById("focusScore").value += 0,
+            document.getElementById("vigorScore").value += 0,
+            document.getElementById("mettleScore").value += 0,
+            document.getElementById("acuityScore").value += 0;
+        }
+    }</script>
         </div>
         <div class="Armor">
             <h2>Armor</h2>
